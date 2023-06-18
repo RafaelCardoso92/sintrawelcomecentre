@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/images/logo.png" />
         <title>Sintra Welcome Centre Website</title>
-        <meta name='description'>Sintra Welcome Centre offers the best tours around one of Portugal's most beautiful villages.</meta>
+        {/* <meta name='description'>Sintra Welcome Centre offers the best tours around one of Portugal's most beautiful villages.</meta> */}
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

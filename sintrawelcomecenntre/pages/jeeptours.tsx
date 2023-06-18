@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AiOutlineClockCircle, AiOutlineHome } from "react-icons/ai";
-import { tuktukTours } from "../utility/text/tuktuktours";
+import { jeepTours } from "../utility/text/jeeptours";
 import Footer from "../components/Footer";
-import { useLocation } from "react-router";
 import Link from "next/link";
 import TukModal from "../components/TukModal";
-import { tuktukmodaltext } from "../utility/text/tuktukmodaltext";
+import { jeepmodaltext } from "../utility/text/jeepmodaltext";
 import { Language, isTypeOfLang } from "../utility/types/types";
 import { useRouter } from "next/router";
 
-const TukTukSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
 `;
@@ -36,6 +35,7 @@ const ProductsTitle = styled.h1`
 const WrapperOfProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 const ProductWrapperContainer = styled.div`
   width: 33%;
@@ -157,7 +157,7 @@ const renderProductsContent = (
     description: string
   ) => void
 ) => {
-  return tuktukTours.map((tour) => {
+  return jeepTours.map((tour) => {
     return (
       <>
         <ProductWrapperContainer>
@@ -183,7 +183,7 @@ const renderProductsContent = (
                 )
               }
             >
-              {tuktukmodaltext[lang].find}
+              {jeepmodaltext[lang].find}
             </ProductButton>
           </ProductWrapper>
         </ProductWrapperContainer>
@@ -192,7 +192,7 @@ const renderProductsContent = (
   });
 };
 
-const TukTukTours = () => {
+const JeepTours = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState<string[]>();
   const [imageData, setImageData] = useState<string[]>();
@@ -226,17 +226,17 @@ const TukTukTours = () => {
 
   return (
     <>
-      <TukTukSection>
+      <Section>
         <ProductsTitleWrapper>
           <GoBackWrapper>
             <AiOutlineHome style={{ color: "#fcfcfc" }} />
             <GoBackText href="/">Go Back</GoBackText>
           </GoBackWrapper>
-          <ProductsTitle>TukTuk Tours</ProductsTitle>
+          <ProductsTitle>Jeep Tours</ProductsTitle>
         </ProductsTitleWrapper>
         <DisclaimerWrapper>
           <Disclaimer>
-            {tuktukmodaltext[isTypeOfLang(lang) ? lang : "en"].disclaimer}
+            {jeepmodaltext[isTypeOfLang(lang) ? lang : "en"].disclaimer}
           </Disclaimer>
         </DisclaimerWrapper>
         <WrapperOfProducts>
@@ -245,7 +245,7 @@ const TukTukTours = () => {
             setModalToShow
           )}
         </WrapperOfProducts>
-      </TukTukSection>
+      </Section>
       <Footer
         {...(isTypeOfLang(lang) ? { language: lang } : { language: "en" })}
       />
@@ -260,4 +260,4 @@ const TukTukTours = () => {
   );
 };
 
-export default TukTukTours;
+export default JeepTours;

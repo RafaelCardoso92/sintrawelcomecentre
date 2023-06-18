@@ -2,7 +2,7 @@ export const tuktukTours = [
     {
         "en": {
             "title": "Mountain Express",
-            "duration": 30
+            "duration": 45
         },
 
         "pt": {
